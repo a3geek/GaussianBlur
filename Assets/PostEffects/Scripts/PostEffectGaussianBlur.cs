@@ -1,15 +1,11 @@
-﻿using System.Collections;
-using System.Collections.Generic;
-using System.Runtime.InteropServices;
-using System;
-using UnityEngine;
+﻿using UnityEngine;
 
-namespace GaussianBlur
+namespace PostEffects
 {
-    public class PostEffectBlur : MonoBehaviour
+    public class PostEffectGaussianBlur : MonoBehaviour
     {
         [SerializeField]
-        private Blur blur = null;
+        private GaussianBlur blur = null;
 
 
         private void OnRenderImage(RenderTexture source, RenderTexture destination)

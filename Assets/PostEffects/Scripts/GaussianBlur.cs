@@ -1,15 +1,13 @@
-﻿using System.Collections;
-using System.Collections.Generic;
-using System.Runtime.InteropServices;
+﻿using System.Runtime.InteropServices;
 using System;
 using UnityEngine;
 
-namespace GaussianBlur
+namespace PostEffects
 {
     [AddComponentMenu("")]
     [DisallowMultipleComponent]
     [RequireComponent(typeof(Renderer))]
-    public class Blur : MonoBehaviour
+    public class GaussianBlur : MonoBehaviour
     {
         public const string PropSamplingCount = "_SamplingCount";
         public const string PropSamplingDistance = "_SamplingDistance";
