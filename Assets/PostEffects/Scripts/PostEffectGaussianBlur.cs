@@ -2,6 +2,8 @@
 
 namespace PostEffects
 {
+    [AddComponentMenu("")]
+    [RequireComponent(typeof(Camera))]
     public class PostEffectGaussianBlur : MonoBehaviour
     {
         [SerializeField]

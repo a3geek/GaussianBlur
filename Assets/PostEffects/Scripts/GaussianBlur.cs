@@ -1,5 +1,5 @@
-﻿using System.Runtime.InteropServices;
-using System;
+﻿using System;
+using System.Runtime.InteropServices;
 using UnityEngine;
 
 namespace PostEffects
@@ -96,26 +96,26 @@ namespace PostEffects
             {
                 this.weightsBuffer.Release();
             }
-            
+
             this.weights = new float[this.weight];
 
             var count = (this.weight - 1) / 2;
             var max = this.prot * this.dispersion;
             var step = max / count;
             var sigma = 1f / (2f * this.dispersion * this.dispersion);
-            
+
             var sum = 0f;
             for(var i = 0; i <= count; i++)
             {
                 var x = step * i;
                 var w = Mathf.Exp(-1f * x * x * sigma);
-                
+
                 this.weights[i + count] = w;
                 this.weights[count - i] = w;
 
                 sum += (w * (i > 0 ? 2f : 1f));
             }
-            
+
             for(var i = 0; i < this.weight; i++)
             {
                 this.weights[i] /= sum;
